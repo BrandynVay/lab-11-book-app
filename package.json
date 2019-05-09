@@ -1,0 +1,25 @@
+{
+  "name": "book-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KlNGU/lab-11-book-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KlNGU/lab-11-book-app/issues"
+  },
+  "homepage": "https://github.com/KlNGU/lab-11-book-app#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "superagent": "^5.0.5"
+  }
+}
