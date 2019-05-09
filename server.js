@@ -19,6 +19,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 // API Routes
+
 // Renders the search form
 app.get('/', newSearch);
 
@@ -35,12 +36,11 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 function Book(info) {
   const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
   this.title = info.title || 'No title available';
+  this.author = info.author || 'No author available';
   this.url = 
 
-  this.http = 
-
   this.letsEncrypt = url => {
-    let http = 'http:'
+    let http = 'http:';
     return url.replace(http, 'https:')
   }
 }
@@ -50,7 +50,6 @@ function newSearch(request, response) {
   response.render('pages/index');
 }
 
-// No API key required
 // Console.log request.body and request.body.search
 function createSearch(request, response) {
   console.log(request.body)
