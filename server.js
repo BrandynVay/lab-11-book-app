@@ -1,5 +1,8 @@
 'use strict';
 
+// PROVIDE ACCESS TO ENVIRONMENT VARIABLES IN .env
+require('dotenv').config();
+
 // Application Dependencies
 const express = require('express');
 const superagent = require('superagent');
