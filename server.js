@@ -37,9 +37,13 @@ function Book(info) {
   const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
   this.title = info.title || 'No title available';
   this.author = info.author || 'No author available';
+  this.url = 
 
+  this.letsEncrypt = url => {
+    let http = 'http:';
+    return url.replace(http, 'https:')
+  }
 }
-
 
 // Note that .ejs file extension is not required
 function newSearch(request, response) {
