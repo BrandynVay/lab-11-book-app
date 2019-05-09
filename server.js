@@ -35,9 +35,15 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 function Book(info) {
   const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
   this.title = info.title || 'No title available';
+  this.url = 
 
+  this.http = 
+
+  this.letsEncrypt = url => {
+    let http = 'http:'
+    return url.replace(http, 'https:')
+  }
 }
-
 
 // Note that .ejs file extension is not required
 function newSearch(request, response) {
