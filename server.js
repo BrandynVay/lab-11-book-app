@@ -65,15 +65,16 @@ function createSearch(request, response) {
 }
 
 function Book(info) {
-  const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
-  this.title = info.title || 'No title available';
-  this.author = info.authors || 'Author not available';
-  this.description = info.description || 'No description';
-  this.image_url = info.imageLinks.thumbnail || placeholderImage;
   this.letsEncrypt = url => {
     let http = 'http:';
     return url.replace(http, 'https:')
   }
+  const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
+  this.title = info.title || 'No title available';
+  this.author = info.authors || 'Author not available';
+  this.description = info.description || 'No description';
+  this.image_url = this.letsEncrypt(info.imageLinks.thumbnail) || placeholderImage;
+  
 
   console.log('\n', info);
 }
