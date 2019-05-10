@@ -40,15 +40,6 @@ function handleError(err, res) {
 
 // HELPER FUNCTIONS
 // Only show part of this to get students started
-function Book(info) {
-  const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
-  this.title = info.title || 'No title available';
-  this.author = info.author || 'No author available';
-  this.letsEncrypt = url => {
-    let http = 'http:';
-    return url.replace(http, 'https:')
-  }
-}
 
 // Note that .ejs file extension is not required
 function newSearch(request, response) {
@@ -69,5 +60,18 @@ function createSearch(request, response) {
 
   superagent.get(url)
     .then(apiResponse => apiResponse.body.items.map(bookResult => new Book(bookResult.volumeInfo)))
-    .then(results => response.render('pages/searches/show', { searchResults: results }));
+    .then(results => response.render('pages/searches/show', { searchResults: results }))
+    .catch(err => handleError(err, response));
+}
+
+function Book(info) {
+  const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
+  this.title = info.title || 'No title available';
+  this.author = info.author || 'Author not available';
+  this.description = info.description || 'No description';
+  this.image_url = info.imageLinks.thumbnail || placeholderImage;
+  this.letsEncrypt = url => {
+    let http = 'http:';
+    return url.replace(http, 'https:')
+  }
 }
