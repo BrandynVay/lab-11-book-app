@@ -74,5 +74,6 @@ function Book(info) {
     let http = 'http:';
     return url.replace(http, 'https:')
   }
-  console.log(info);
+
+  console.log('\n', info);
 }
