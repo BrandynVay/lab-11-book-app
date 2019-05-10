@@ -5,11 +5,11 @@ https://github.com/codefellows/seattle-301n13/tree/master/class-11/lab
 # Book App
 
 **Author**: Brandyn Vay
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 1.0.2
 
 ## Overview
 
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code 301 class. (i.e. What's your problem domain?) -->
+This is a book application so that the user can look up any book by title or author. We built this application so the user can search for a curtain book but they might not be able to remmember the author or title name.
 
 ## Getting Started
 
@@ -17,7 +17,9 @@ https://github.com/codefellows/seattle-301n13/tree/master/class-11/lab
 
 ## Architecture
 
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+The Book app application is designed for anyone to be able to use the google books api to search by autor or title.
+languages: Javascript, CSS, and HTML
+libraries: node.js, ejs, express, and superagent
 
 ## Change Log
 
@@ -28,7 +30,9 @@ https://github.com/codefellows/seattle-301n13/tree/master/class-11/lab
 ## Credits and Collaborations
 
 Aaron Imbrock
+
 ----------------------------------------------------------------------->
+
 Number and name of feature: ________________________________
 
 Estimate of time needed to complete: _____
