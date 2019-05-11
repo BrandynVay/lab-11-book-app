@@ -6,10 +6,13 @@ require('dotenv').config();
 // Application Dependencies
 const express = require('express');
 const superagent = require('superagent');
+const pg = require('pg');
 
 // Application Setup
 const app = express();
 const PORT = process.env.PORT;
+const client = new pg.Client(process.env.DATABASE_URL);
+client.connect();
 
 // Application Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -70,11 +73,14 @@ function Book(info) {
     return url.replace(http, 'https:')
   }
   const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
-  this.title = info.title || 'No title available';
-  this.author = info.authors || 'Author not available';
-  this.description = info.description || 'No description';
+  this.title = info.title ? info.title : 'Title not available';
+  this.author = info.authors ? info.authors : 'Author not available';
+  this.isbn = info.industryIdentifiers ? info.industryIdentifiers[0].identifier : 'ISBN not available';
+  // this.image_url = info.imageLinks ? info.imageLinks.thumbnail : placeholderImage;
+  this.description = info.description ? info.description : 'No description';
+  this.bookshelf = info.categories ? info.categories[0] : 'Uncategorized';
   this.image_url = this.letsEncrypt(info.imageLinks.thumbnail) || placeholderImage;
-  
-
   console.log('\n', info);
 }
+
+client.on('error', error => console.error(error));
