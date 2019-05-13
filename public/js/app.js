@@ -16,7 +16,7 @@ function hideForm(event) {
   }
 }
 
-$('.show-add-form').on('click', (event) => {
+$('.add-form').on('click', (event) => {
   revealForm(event);
   hideForm(event);
 });
