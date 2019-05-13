@@ -92,6 +92,8 @@ function createSearch(request, response) {
 
 function addBooks(request, response) {
   let { title, author, isbn, description, bookshelf, image_url} = request.body;
+
+  // console.log()
   
   const SQL = 'INSERT INTO books (title, author, isbn, description, bookshelf, image_url) VALUES ($1, $2, $3, $4, $5, $6);';
   const values = [title, author, isbn, description, bookshelf, image_url];
@@ -110,17 +112,18 @@ function addBooks(request, response) {
 }
 
 function Book(info) {
-  this.letsEncrypt = url => {
-    let http = 'http:';
-    return url.replace(http, 'https:')
-  }
   const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
   this.title = info.title ? info.title : 'Title not available';
   this.author = info.authors ? info.authors[0] : 'Author not available';
   this.isbn = info.industryIdentifiers ? info.industryIdentifiers[0].identifier : 'ISBN not available';
   this.description = info.description ? info.description : 'No description';
   this.bookshelf = info.categories ? info.categories[0] : 'Uncategorized';
-  this.image_url = this.letsEncrypt(info.imageLinks.thumbnail) || placeholderImage;
+  this.image_url = info.imageLinks ? info.imageLinks.thumbnail : placeholderImage;
+  const letsEncrypt = (url) => {
+    let http = 'http';
+    return url.replace(http, 'https')
+  }
+  this.image_url = letsEncrypt(this.image_url);
 }
 
 // ERROR HANDLER
