@@ -20,15 +20,6 @@ h2 {
   font-size: 1.5em;
 }
 
-input, select {
-  display: block;
-  width: 80%;
-  border-radius: 5px;
-  padding-left: 1em;
-  height: 2em;
-  margin: 1em auto;
-}
-
 button {
   float: left;
   width: 45%;
@@ -36,8 +27,6 @@ button {
   margin-left: 2.5%;
   border-radius: 5px;
   border: none;
-  cursor: pointer;
-  box-shadow: 1px 1px 3px black;
   margin-top: 1em;
   margin-bottom: 1em;
 }
