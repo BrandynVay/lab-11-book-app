@@ -8,6 +8,7 @@ function revealForm(event) {
   }
 }
 
+
 // Hides form
 function hideForm(event) {
   const clickedOn = event.target;

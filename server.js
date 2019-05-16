@@ -21,8 +21,6 @@ app.use(express.static('public'));
 // Set the view engine for server-side templating
 app.set('view engine', 'ejs');
 
-// API Routes
-
 // Renders the search form
 app.get('/', showBooks);
 app.get('/book-details/:book_id', showBookDetails);
