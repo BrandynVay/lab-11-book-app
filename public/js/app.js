@@ -3,15 +3,17 @@
 // Reveals form
 function revealForm(event) {
   const clickedOn = event.target;
-  if (event.target.textContent === 'Select this Book' || 'Update Details') {
+  if (event.target.textContent === 'Select this Book') {
     $(clickedOn).parent().find('form').removeClass('hidden');
   }
 }
+
 
 // Hides form
 function hideForm(event) {
   const clickedOn = event.target;
   if (event.target.textContent === 'Hide Form') {
+    console.log(event.target);
     $(clickedOn).parent().addClass('hidden');
   }
 }
