@@ -14,7 +14,7 @@
           <h3>by <%= book.author %></h3>
           <p><%= book.description %></p>
           <button type="button">Select this Book</button>
-
+  
           <form action="/add-to-database" method="post" class="hidden">
             <input type="text" name="title" value="<%= book.title %>" />
             <input type="text" name="author" value="<%= book.author %>" />
@@ -29,7 +29,14 @@
       <% }) %>
     </ul>
   </main>
+<<<<<<< HEAD
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+=======
+  <script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
+>>>>>>> 6c7ef2497303247ea7796b20c1ae8d10a6aa841d
     <script src="/js/app.js"></script>
 </body>
 </html>
