@@ -1,0 +1,78 @@
+header {
+  overflow: auto;
+  padding: 1em 0 0;
+  background-color: black;
+  color: white;
+  margin-bottom: 1em;
+}
+
+header a {
+  color: white;
+}
+
+header p {
+  float: left;
+  padding: 0;
+  margin-left: 1em;
+}
+
+header ul {
+  float: right;
+}
+
+header li {
+  border: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+  margin-right: 1em;
+}
+
+h1 {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+main#search-page input[type="text"] {
+  font-size: 1.5em;
+  border-radius: 5px;
+  border: none;
+  text-indent: .5em;
+}
+
+main#search-page label {
+  font-size: 1.5em;
+}
+
+main#search-page span {
+  margin-left: .5em; 
+  float: left;
+}
+
+main#search-page input[type="radio"] {
+  width: auto;
+  float: left;
+  margin-left: 3em
+}
+
+.hidden {
+  display: none;
+}
+
+li {
+  padding: 1em 3em;
+  padding-bottom: 5em;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+img, h2, h3, p {
+  margin-bottom: 1em;
+}
+
+button:hover {
+  box-shadow: 2px 2px 3px black;
+}
+
+button:active {
+  box-shadow: 1px 1px 3px black;
+}

@@ -1,5 +1,10 @@
 'use strict';
 
+//Transforms hamburger menu icon
+function hamburgerMenu(x) {
+  x.classList.toggle("change");
+}
+
 // Reveals form
 function revealForm(event) {
   const clickedOn = event.target;
