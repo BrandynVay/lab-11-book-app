@@ -27,8 +27,10 @@ app.get('/book-details/:book_id', showBookDetails);
 app.get('/new-book-search', newSearch);
 app.post('/searches', createSearch);
 app.post('/add-to-database', addBooks);
-app.put('/update-book/:book_id', updateBook);
-app.delete('/delete-book/:book_id', deleteBook);
+
+app.post('/update-book/:book_id', updateBook);
+
+app.post('/delete-book/:book_id', deleteBook);
 
 // Catch-all
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
