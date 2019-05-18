@@ -27,10 +27,8 @@ app.get('/book-details/:book_id', showBookDetails);
 app.get('/new-book-search', newSearch);
 app.post('/searches', createSearch);
 app.post('/add-to-database', addBooks);
-
-app.post('/update-book/:book_id', updateBook);
-
 app.post('/delete-book/:book_id', deleteBook);
+app.post('/update-book/:book_id', updateBook);
 
 // Catch-all
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
@@ -116,7 +114,7 @@ function addBooks(request, response) {
 // Updates books
 function updateBook(request, response) {
   let { title, author, isbn, description, bookshelf, image_url } = request.body;
-  const SQL = 'UPDATE books SET title=$1, author=$2, isbn=$3, description=$5, bookshelf=$6, image_url=$4, WHERE id=$7;';
+  const SQL = 'UPDATE books SET title=$1, author=$2, isbn=$3, description=$4, bookshelf=$5, image_url=$6, id=$7;';
   const values = [title, author, isbn, description, bookshelf, image_url, request.params.book_id];
   client.query(SQL, values)
     .then(response.redirect(`/book-details/${request.params.book_id}`))

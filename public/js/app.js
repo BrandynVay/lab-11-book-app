@@ -8,7 +8,7 @@ function hamburgerMenu(x) {
 // Reveals form
 function revealForm(event) {
   const clickedOn = event.target;
-  if (event.target.textContent === 'Select this Book') {
+  if (event.target.textContent === 'Select this Book', 'Update Details') {
     $(clickedOn).parent().find('form').removeClass('hidden');
   }
 }
