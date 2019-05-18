@@ -9,7 +9,8 @@
     <ul class="add-form">
       <li>
         <%- include('detail', {book: bookDetails}) %>
-        <form action="/delete-book/<%= bookDetails.id %>">
+        <form action="/delete-book/<%= bookDetails.id %>" method="post">
+          <input type="hidden" name="_method" value="DELETE">
           <button type="submit">Delete Book</button>
         </form>
 
