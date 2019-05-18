@@ -7,6 +7,7 @@ require('dotenv').config();
 const express = require('express');
 const superagent = require('superagent');
 const pg = require('pg');
+const method = require('method-override');
 
 // Application Setup
 const app = express();
@@ -18,6 +19,14 @@ client.connect();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
+app.use(method(function (request, response) {
+  if (request.body && typeof request.body === 'object' && '_method' in request.body) {
+    let method = request.body._method;
+    delete request.body._method;
+    return method;
+  }
+}));
+
 // Set the view engine for server-side templating
 app.set('view engine', 'ejs');
 
@@ -27,8 +36,10 @@ app.get('/book-details/:book_id', showBookDetails);
 app.get('/new-book-search', newSearch);
 app.post('/searches', createSearch);
 app.post('/add-to-database', addBooks);
-app.post('/delete-book/:book_id', deleteBook);
-app.post('/update-book/:book_id', updateBook);
+
+app.delete('/delete-book/:book_id', deleteBook);
+
+app.put('/update-book/:book_id', updateBook);
 
 // Catch-all
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));

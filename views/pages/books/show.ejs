@@ -10,12 +10,14 @@
       <li>
         <%- include('detail', {book: bookDetails}) %>
         <form action="/delete-book/<%= bookDetails.id %>" method="post">
+          <input type="hidden" name="_method" value="DELETE">
           <button type="submit">Delete Book</button>
         </form>
 
         <button type="button">Update Details</button>
         
         <form action="/update-book/<%= bookDetails.id %>" method="post" class="hidden">
+          <input type="hidden" name="_method" value="PUT">
           <input type="text" name="title" value="<%= bookDetails.title %>" />
           <input type="text" name="author" value="<%= bookDetails.author %>" />
           <input type="text" name="isbn" value="<%= bookDetails.isbn %>" />
